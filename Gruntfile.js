@@ -139,6 +139,28 @@ module.exports = function (grunt) {
 			}
 		},
 
+        makepot: {
+            target: {
+                options: {
+                    domainPath: '/languages',
+                    exclude: ['.git/.*', '.idea/.*', 'assets/.*', 'languages/.*', 'logs/.*', 'node_modules/.*', 'tests/.*', 'vendor/.*'],
+                    mainFile: 'awesome-support.php',
+                    potComments: 'ThemeAvenue Copyright (c) {{year}}',
+                    potFilename: 'wpas.pot',
+                    potHeaders: {
+                        poedit: true,
+                        'x-poedit-keywordslist': true,
+                        'Last-Translator':'ThemeAvenue <support@themeavenue.net>',
+                        'Language-Team':'ThemeAvenue <support@themeavenue.net>'
+                    },
+                    processPot: null,
+                    type: 'wp-plugin',
+                    updateTimestamp: true,
+                    updatePoFiles: false
+                }
+            }
+        },
+
 		watch: {
 			options: {
 				livereload: {
